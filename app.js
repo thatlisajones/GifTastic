@@ -1,7 +1,7 @@
 //Create array of cinema search phrases	
 $(document).ready(function() {
 
-  var topics = ["Fritz Lang", "Who's Afraid of Virginia Woolf", "Sophia Loren", "Cabinet of Dr. Caligari", "La Dolce Vita", "James Dean", "Marlon Brando",  "The Passion of Joan of Arc", "Murnau Sunrise", "Double Indemnity", "Charles Laughton", "Buster Keaton"];	
+  var topics = ["Fritz Lang", "Who's Afraid of Virginia Woolf", "Sophia Loren", "Cabinet of Dr. Caligari", "La Dolce Vita", "Charles Laughton", "Buster Keaton", "Marlon Brando", "James Dean",  "The Passion of Joan of Arc", "Murnau Sunrise", "Double Indemnity"];	
 
   // Create buttons for items in array
   function renderButtons(){
