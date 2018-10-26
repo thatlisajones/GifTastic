@@ -1,9 +1,9 @@
-//Create array of cinema search phrases	
+//Initial array of movies	
 $(document).ready(function() {
 
-  var topics = ["Fritz Lang", "Who's Afraid of Virginia Woolf", "Sophia Loren", "Cabinet of Dr. Caligari", "La Dolce Vita", "Charles Laughton", "Buster Keaton", "Marlon Brando", "James Dean",  "The Passion of Joan of Arc", "Murnau Sunrise", "Double Indemnity"];	
+  var topics = ["Fritz Lang", "Who's Afraid of Virginia Woolf", "Sophia Loren", "Cabinet of Dr. Caligari", "La Dolce Vita", "Charles Laughton", "Buster Keaton", "Marlon Brando", "James Dean",  "The Passion of Joan of Arc", "Murnau Sunrise", "Double Indemnity"];
 
-  // Create buttons for items in array
+  //  create topics array buttons
   function renderButtons(){
     $('#buttons-view').empty();
 
@@ -18,31 +18,31 @@ $(document).ready(function() {
         }    
         renderButtons();
 
-// When a button is clicked...
+//on button click
 $(document).on('click', '.cinema', function() {
 
+    //new variable will log the text data from each button
     var cinemaSnob = $(this).html(); 
-    console.log(cinemaSnob);
+    // console.log(cinemaSnob);
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cinemaSnob + "&api_key=cBbCEaO8r8nfWDHs4ofmgngcz68DWzvy&limit=10";
-    console.log(queryURL);
+    // console.log(queryURL);
 
-    // Set Ajax call for each button
+    // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
 
       var results = response.data;
-        console.log(results);
-        
-        //Clear div before adding new GIFs
+        //console.log(results);
+        //empties the div before adding more gifs
         $('#movies-view').empty();
         for ( var j=0; j < results.length; j++) {
                     var imageDiv = $('<div>');
                     var imageView = results[j].images.fixed_height.url;
                     var still = results[j].images.fixed_height_still.url;
-                        console.log(imageView);  
+                        // console.log(imageView);  
 
         var gifImage = $('<img>').attr("src", still).attr('data-animate', imageView).attr('data-still', still);
                     gifImage.attr('data-state', 'still');
@@ -56,9 +56,9 @@ $(document).on('click', '.cinema', function() {
         $('#movies-view').prepend(displayRated);
   } // end for loop
 
-}); // end
+}); // done response
 
-        //Still then animate
+        //function to stop and animate gifs
         function playGif() { 
                     var state = $(this).attr('data-state');
                     // console.log(state);
@@ -74,7 +74,7 @@ $(document).on('click', '.cinema', function() {
 
       }); //end of document on click 
 
-          //add new button to array
+          //adding new button to array
         $(document).on('click', '#add-movie', function(){
             if ($('#movie-input').val().trim() == ''){
               alert('Input can not be left blank');
