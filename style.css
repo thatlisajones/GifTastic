@@ -1,0 +1,41 @@
+body {
+    background-image: url("filmstrip.png");
+    background-size: cover;
+    background-color: lavender;
+
+}
+
+.movies-view {
+  align-content: ;
+}
+
+
+.jumbotron {
+  background-color: purple;
+  
+}
+
+h1 {
+  text-align: left;
+  color: white;
+  font-weight: light;
+  font: outline;
+  font-size: 35px;
+}
+
+p {
+  
+  font-weight: bold;
+  color: gray;
+  font: outline;
+  font-size: 16px;
+  padding: 5px;
+}
+
+h2, h4 {
+  text-align: left;
+  color: white;
+  font-weight: lighter;
+  font: outline;
+  font-size: 18px;;
+}
