@@ -5,8 +5,13 @@ body {
 
 }
 
-.movies-view {
-  align-content: ;
+#movies-view {
+  display: inline;
+	margin-bottom: 40px;
+}
+
+#buttons-view {
+	display: inline;
 }
 
 
