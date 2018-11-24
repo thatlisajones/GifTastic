@@ -1,14 +1,15 @@
 body {
-    background-image: url("assets/filmstrip.png");
+    background-image: url("filmstrip.png");
+    /* background-image: url(""); */
     background-size: cover;
     background-color: lavender;
 
 }
 
-#movies-view {
+/* #movies-view {
   display: inline;
 	margin-bottom: 40px;
-}
+} */
 
 #buttons-view {
 	display: inline;
